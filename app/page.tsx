@@ -99,7 +99,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <span className="text-sm uppercase tracking-wider text-gray-600">Bienvenue à MCC</span>
-            <h2 className="text-4xl font-bold mt-2 mb-6">Notre Vision</h2>
+            <h2 className="text-4xl font-bold mt-2 mb-6 text-black">Notre Vision</h2>
             <p className="text-gray-700 mb-8">
               Se positionner comme une référence nationale dans l'accompagnement et l'insertion des jeunes et femmes vulnérables au travers de programmes de protection, d'accompagnement et d'insertion dans la société.
             </p>
@@ -148,7 +148,7 @@ export default function Home() {
       {/* Nos Valeurs Section */}
       <section className="bg-[#FAF7ED] py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-2">Nos valeurs</h2>
+          <h2 className="text-4xl font-bold text-center mb-2 text-black">Nos valeurs</h2>
           <div className="flex justify-center mb-8">
             <span className="block w-12 h-1 bg-yellow-700 rounded"></span>
           </div>
@@ -231,7 +231,7 @@ export default function Home() {
       {/* Nos Projets Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-2">Nos projets</h2>
+          <h2 className="text-4xl font-bold text-center mb-2 text-black">Nos projets</h2>
           <div className="flex justify-center mb-8">
             <span className="block w-12 h-1 bg-yellow-700 rounded"></span>
           </div>

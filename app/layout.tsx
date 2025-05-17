@@ -5,8 +5,8 @@ import Footer from './components/Footer'
 import { merriweather } from './fonts'
 
 export const metadata: Metadata = {
-  title: 'MCC - Mission Chrétienne pour Christ',
-  description: 'Mission Chrétienne pour Christ - Aider les plus démunis',
+  title: 'MCC - Modèles de Changement de la Cité',
+  description: 'Modèles de Changement de la Cité',
 }
 
 export default function RootLayout({

@@ -1,4 +1,4 @@
-// File: /home/prince/Documents/mcc/app/layout.tsx
+// File: /Applications/MAMP/htdocs/mcc/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

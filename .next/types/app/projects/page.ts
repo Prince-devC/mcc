@@ -1,4 +1,4 @@
-// File: /home/prince/Documents/mcc/app/projects/page.tsx
+// File: /Applications/MAMP/htdocs/mcc/app/projects/page.tsx
 import * as entry from '../../../../app/projects/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

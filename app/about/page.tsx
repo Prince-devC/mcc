@@ -35,12 +35,12 @@ export default function About() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <section className="mb-16">
-        <h1 className="text-4xl font-bold mb-8">Qui sommes - nous ?</h1>
-        <h2 className="text-2xl font-semibold mb-4">L'historique et expériences de l'ONG</h2>
+        <h1 className="text-4xl font-bold mb-8 text-black">Qui sommes - nous ?</h1>
+        <h2 className="text-2xl font-semibold mb-4 text-black">L'historique et expériences de l'ONG</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="prose max-w-none">
-            <p>L'ONG MCC, sérieusement connue sous le nom de GBEMENOU Charity, est née d'une histoire de résilience, d'équité sociale et d'un profond désir de transformation.</p>
-            <p>Son fondateur, GBEMENOU Brice Aurel, a vécu une enfance marquée par la précarité et l'isolement. Après avoir connu bon nombre de défis, plus ou moins durs en 2015, notamment trois jours après la proclamation de ses résultats du BEPC, il a connu l'agréable phase la rue. Plus tard, il a pu par ses mérites et son abnégation, se relever et se reconstruire. Aujourd'hui, il se renouvelle sans cesse ni oublier. Dans un contexte où la promotion sociale des scolarisés et enfants vulnérables était quasi inexistante, il a su se battre pour survivre. Comme de nombreux jeunes abandonnés, il a dû se battre pour survivre bien qu'étant un enfant, il a quitté son pays pour s'exiler. Sa vie a été un parcours semé d'embûches et de défis. En tant qu'agent de sécurité, tout en poursuivant ses études universitaires et ses activités de violence intercalée. Mais cette expérience lui a fait renforcer sa prise de conscience. Beaucoup d'enfants font face à la même réalité et n'ont pas ces mêmes possibilités.</p>
+            <p className="text-black">L'ONG MCC, sérieusement connue sous le nom de GBEMENOU Charity, est née d'une histoire de résilience, d'équité sociale et d'un profond désir de transformation.</p>
+            <p className="text-black">Son fondateur, GBEMENOU Brice Aurel, a vécu une enfance marquée par la précarité et l'isolement. Après avoir connu bon nombre de défis, plus ou moins durs en 2015, notamment trois jours après la proclamation de ses résultats du BEPC, il a connu l'agréable phase la rue. Plus tard, il a pu par ses mérites et son abnégation, se relever et se reconstruire. Aujourd'hui, il se renouvelle sans cesse ni oublier. Dans un contexte où la promotion sociale des scolarisés et enfants vulnérables était quasi inexistante, il a su se battre pour survivre. Comme de nombreux jeunes abandonnés, il a dû se battre pour survivre bien qu'étant un enfant, il a quitté son pays pour s'exiler. Sa vie a été un parcours semé d'embûches et de défis. En tant qu'agent de sécurité, tout en poursuivant ses études universitaires et ses activités de violence intercalée. Mais cette expérience lui a fait renforcer sa prise de conscience. Beaucoup d'enfants font face à la même réalité et n'ont pas ces mêmes possibilités.</p>
           </div>
           <div className="relative h-[650px] -mt-32">
             <Image 
@@ -66,15 +66,15 @@ export default function About() {
                   className="object-cover rounded-full"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-              <p className="text-gray-600">{member.role}</p>
+              <h3 className="text-xl font-semibold mb-2 text-black">{member.name}</h3>
+              <p className="text-gray-600 text-black">{member.role}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-8">Temoignages</h2>
+        <h2 className="text-2xl font-semibold mb-8 text-black">Temoignages</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-gray-50 p-6 rounded-lg">
