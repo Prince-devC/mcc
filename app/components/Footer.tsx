@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bg-[#1B2537] text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <h3 className="font-bold text-xl mb-4">MCC</h3>
           <p className="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus magna purus, nisl dolor sed egestas ut imperdiet volutpat.</p>
@@ -36,7 +36,7 @@ export default function Footer() {
           <h3 className="font-bold mb-4">Soutenir</h3>
           <Link 
             href="/donate"
-            className="bg-yellow-600 text-white px-6 py-2 rounded-full hover:bg-yellow-700 inline-block"
+            className="bg-yellow-600 text-white px-6 py-2 rounded-full hover:bg-yellow-700 inline-block w-full sm:w-auto text-center"
           >
             SOUTENIR
           </Link>
@@ -44,17 +44,20 @@ export default function Footer() {
 
         <div>
           <h3 className="font-bold mb-4">Newsletter</h3>
-          <div className="flex gap-2">
+          <form className="flex flex-col sm:flex-row gap-2 w-full">
             <input
               type="email"
               placeholder="Votre email"
-              className="bg-gray-700 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-600 flex-1"
+              className="bg-gray-700 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-600 flex-1 w-full"
             />
-            <button className="bg-yellow-600 text-white px-4 py-2 rounded-full hover:bg-yellow-700">
+            <button className="bg-yellow-600 text-white px-4 py-2 rounded-full hover:bg-yellow-700 w-full sm:w-auto">
               S'INSCRIRE
             </button>
-          </div>
+          </form>
         </div>
+      </div>
+      <div className="mt-8 text-center text-gray-400 text-xs px-4">
+        © {new Date().getFullYear()} MCC. Tous droits réservés.
       </div>
     </footer>
   );

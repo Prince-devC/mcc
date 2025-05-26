@@ -1,10 +1,10 @@
 {
   "/_not-found": "app/_not-found.js",
+  "/page": "app/page.js",
   "/about/page": "app/about/page.js",
   "/donate/page": "app/donate/page.js",
-  "/page": "app/page.js",
-  "/partnership/page": "app/partnership/page.js",
+  "/projects/page": "app/projects/page.js",
   "/projects/rentree-pour-tous/page": "app/projects/rentree-pour-tous/page.js",
   "/support/page": "app/support/page.js",
-  "/projects/page": "app/projects/page.js"
+  "/partnership/page": "app/partnership/page.js"
 }
