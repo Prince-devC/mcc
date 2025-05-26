@@ -1,6 +1,26 @@
+"use client";
 import Image from 'next/image';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import LoadingScreen from '../components/LoadingScreen';
 
 export default function Support() {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simuler un temps de chargement
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // 2 secondes de chargement
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}

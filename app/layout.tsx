@@ -16,13 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={`${merriweather.variable} font-merriweather flex flex-col min-h-screen`}>
+      <body className={`${merriweather.className} flex flex-col min-h-screen`}>
         <Navigation />
-        <main className="flex-grow">
-          {children}
-        </main>
+        {children}
         <Footer />
       </body>
     </html>
-  )
+  );
 } 

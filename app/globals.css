@@ -30,3 +30,11 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 } 
+
+@keyframes pulse-scale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+.animate-pulse-scale {
+  animation: pulse-scale 1.2s infinite cubic-bezier(0.4,0,0.6,1);
+}
