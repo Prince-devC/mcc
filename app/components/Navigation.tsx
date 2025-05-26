@@ -106,7 +106,7 @@ export default function Navigation() {
 
       {/* Menu mobile dropdown */}
       <div 
-        className={`md:hidden absolute w-full bg-[#1B2537] transition-all duration-300 ease-in-out ${
+        className={`md:hidden absolute w-full bg-[#1B2537] z-50 transition-all duration-300 ease-in-out ${
           isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
