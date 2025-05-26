@@ -1,3 +1,4 @@
+"use client";
 import LoadingScreen from '@/app/components/LoadingScreen';
 import Image from 'next/image';
 import Link from 'next/link';
