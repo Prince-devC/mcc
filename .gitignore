@@ -33,6 +33,7 @@ yarn-error.log*
 next-env.d.ts
 
 # Gros fichiers vidéo et images
+public/images/
 
 public/videos/
 public/uploads/
