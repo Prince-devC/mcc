@@ -1,6 +1,5 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { HomeProvider } from './admin/context/HomeContext'
 import { SettingsProvider } from './context/SettingsContext'
 import type { Metadata } from "next"
 import type { Settings } from "@/types/prisma"
@@ -69,11 +68,9 @@ export default async function RootLayout({
     <html lang="fr">
       <body className={inter.className} data-testim-main-word-scripts-loaded="true">
         <SettingsProvider>
-          <HomeProvider>
             <PublicLayout>
               {children}
             </PublicLayout>
-          </HomeProvider>
         </SettingsProvider>
       </body>
     </html>

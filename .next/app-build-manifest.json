@@ -1,15 +1,97 @@
 {
   "pages": {
+    "/_not-found": [
+      "static/chunks/webpack-4fee5128962eee4e.js",
+      "static/chunks/fd9d1056-77dfc4e1cebd038c.js",
+      "static/chunks/69-9b505d51c9ada89e.js",
+      "static/chunks/main-app-155363a3d038d661.js",
+      "static/chunks/app/_not-found-06db69483117356c.js"
+    ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/webpack-4fee5128962eee4e.js",
+      "static/chunks/fd9d1056-77dfc4e1cebd038c.js",
+      "static/chunks/69-9b505d51c9ada89e.js",
+      "static/chunks/main-app-155363a3d038d661.js",
+      "static/chunks/703-148eadc6227ea062.js",
+      "static/chunks/787-8cedb6146f29be9e.js",
+      "static/chunks/459-b71fb7e932beaeef.js",
+      "static/css/3ffc5d9aed9d5f33.css",
+      "static/chunks/app/layout-9ad2eb61187f8af8.js"
     ],
     "/donate/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/donate/page.js"
+      "static/chunks/webpack-4fee5128962eee4e.js",
+      "static/chunks/fd9d1056-77dfc4e1cebd038c.js",
+      "static/chunks/69-9b505d51c9ada89e.js",
+      "static/chunks/main-app-155363a3d038d661.js",
+      "static/chunks/234-57aedc91824086a1.js",
+      "static/chunks/703-148eadc6227ea062.js",
+      "static/chunks/app/donate/page-21d37090e156b959.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-4fee5128962eee4e.js",
+      "static/chunks/fd9d1056-77dfc4e1cebd038c.js",
+      "static/chunks/69-9b505d51c9ada89e.js",
+      "static/chunks/main-app-155363a3d038d661.js",
+      "static/chunks/234-57aedc91824086a1.js",
+      "static/chunks/app/page-bcf0f28eee647d49.js"
+    ],
+    "/partnership/page": [
+      "static/chunks/webpack-4fee5128962eee4e.js",
+      "static/chunks/fd9d1056-77dfc4e1cebd038c.js",
+      "static/chunks/69-9b505d51c9ada89e.js",
+      "static/chunks/main-app-155363a3d038d661.js",
+      "static/chunks/234-57aedc91824086a1.js",
+      "static/chunks/703-148eadc6227ea062.js",
+      "static/chunks/app/partnership/page-232b6e955250487a.js"
+    ],
+    "/about/page": [
+      "static/chunks/webpack-4fee5128962eee4e.js",
+      "static/chunks/fd9d1056-77dfc4e1cebd038c.js",
+      "static/chunks/69-9b505d51c9ada89e.js",
+      "static/chunks/main-app-155363a3d038d661.js",
+      "static/chunks/234-57aedc91824086a1.js",
+      "static/chunks/703-148eadc6227ea062.js",
+      "static/chunks/app/about/page-797c4959e747cea8.js"
+    ],
+    "/projects/page": [
+      "static/chunks/webpack-4fee5128962eee4e.js",
+      "static/chunks/fd9d1056-77dfc4e1cebd038c.js",
+      "static/chunks/69-9b505d51c9ada89e.js",
+      "static/chunks/main-app-155363a3d038d661.js",
+      "static/chunks/234-57aedc91824086a1.js",
+      "static/chunks/703-148eadc6227ea062.js",
+      "static/chunks/787-8cedb6146f29be9e.js",
+      "static/chunks/app/projects/page-8e41fd0fbc62281a.js"
+    ],
+    "/projects/rentree-pour-tous/[id]/page": [
+      "static/chunks/webpack-4fee5128962eee4e.js",
+      "static/chunks/fd9d1056-77dfc4e1cebd038c.js",
+      "static/chunks/69-9b505d51c9ada89e.js",
+      "static/chunks/main-app-155363a3d038d661.js",
+      "static/chunks/234-57aedc91824086a1.js",
+      "static/chunks/703-148eadc6227ea062.js",
+      "static/chunks/512-6deb9d0f1d0195ee.js",
+      "static/chunks/app/projects/rentree-pour-tous/[id]/page-7f3f709ac4521b52.js"
+    ],
+    "/support/page": [
+      "static/chunks/webpack-4fee5128962eee4e.js",
+      "static/chunks/fd9d1056-77dfc4e1cebd038c.js",
+      "static/chunks/69-9b505d51c9ada89e.js",
+      "static/chunks/main-app-155363a3d038d661.js",
+      "static/chunks/234-57aedc91824086a1.js",
+      "static/chunks/703-148eadc6227ea062.js",
+      "static/chunks/app/support/page-8e060c32a969cfe6.js"
+    ],
+    "/projects/rentree-pour-tous/page": [
+      "static/chunks/webpack-4fee5128962eee4e.js",
+      "static/chunks/fd9d1056-77dfc4e1cebd038c.js",
+      "static/chunks/69-9b505d51c9ada89e.js",
+      "static/chunks/main-app-155363a3d038d661.js",
+      "static/chunks/234-57aedc91824086a1.js",
+      "static/chunks/703-148eadc6227ea062.js",
+      "static/chunks/787-8cedb6146f29be9e.js",
+      "static/chunks/512-6deb9d0f1d0195ee.js",
+      "static/chunks/app/projects/rentree-pour-tous/page-0ef67ea4d31ed30c.js"
     ]
   }
 }

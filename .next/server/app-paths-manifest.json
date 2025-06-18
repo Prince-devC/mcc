@@ -1,3 +1,11 @@
 {
-  "/donate/page": "app/donate/page.js"
+  "/_not-found": "app/_not-found.js",
+  "/donate/page": "app/donate/page.js",
+  "/page": "app/page.js",
+  "/partnership/page": "app/partnership/page.js",
+  "/about/page": "app/about/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/projects/rentree-pour-tous/[id]/page": "app/projects/rentree-pour-tous/[id]/page.js",
+  "/support/page": "app/support/page.js",
+  "/projects/rentree-pour-tous/page": "app/projects/rentree-pour-tous/page.js"
 }
