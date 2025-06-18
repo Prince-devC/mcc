@@ -1,64 +1,280 @@
-import Link from 'next/link';
+"use client"
+
+import React from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { useState, useEffect } from "react"
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, Heart, ArrowUp } from "lucide-react"
+
+// Données par défaut pour le footer
+const defaultFooterData = {
+  logo: "/images/images_logo.png",
+  siteName: "MCC",
+  siteDescription: "Mission Chrétienne pour les Enfants - Protéger, accompagner et insérer les enfants, jeunes et femmes vulnérables",
+  contactEmail: "contact@mcc.org",
+  contactPhone: "+221 XX XXX XX XX",
+  address: "Dakar, Sénégal",
+  facebookUrl: "https://facebook.com/mcc",
+  twitterUrl: "https://twitter.com/mcc",
+  instagramUrl: "https://instagram.com/mcc",
+  linkedinUrl: "https://linkedin.com/company/mcc",
+  youtubeUrl: "https://youtube.com/mcc"
+}
+
+// Composant de carte animée
+function AnimatedCard({
+  children,
+  className = "",
+  delay = 0,
+}: {
+  children: React.ReactNode
+  className?: string
+  delay?: number
+}) {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), delay)
+    return () => clearTimeout(timer)
+  }, [delay])
+
+  return (
+    <div
+      className={`
+        transform transition-all duration-700 ease-out
+        ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}
+        ${className}
+      `}
+    >
+      {children}
+    </div>
+  )
+}
+
+// Composant bouton retour en haut
+function ScrollToTop() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true)
+      } else {
+        setIsVisible(false)
+      }
+    }
+
+    window.addEventListener("scroll", toggleVisibility)
+    return () => window.removeEventListener("scroll", toggleVisibility)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+
+  return (
+    <button
+      onClick={scrollToTop}
+      className={`
+        fixed bottom-8 right-8 z-50 p-3 bg-gradient-to-r from-blue-500 to-purple-500 
+        text-white rounded-full shadow-lg hover:shadow-xl transform transition-all duration-300
+        ${isVisible ? "translate-y-0 opacity-100 scale-100" : "translate-y-16 opacity-0 scale-0"}
+        hover:scale-110 hover:rotate-12
+      `}
+    >
+      <ArrowUp className="w-5 h-5" />
+    </button>
+  )
+}
 
 export default function Footer() {
+  const socialIcons = {
+    facebook: Facebook,
+    twitter: Twitter,
+    instagram: Instagram,
+    linkedin: Linkedin,
+    youtube: Youtube,
+  }
+
+  const socialLinks = [
+    { name: "facebook", url: defaultFooterData.facebookUrl, color: "hover:text-blue-400" },
+    { name: "twitter", url: defaultFooterData.twitterUrl, color: "hover:text-sky-400" },
+    { name: "instagram", url: defaultFooterData.instagramUrl, color: "hover:text-pink-400" },
+    { name: "linkedin", url: defaultFooterData.linkedinUrl, color: "hover:text-blue-600" },
+    { name: "youtube", url: defaultFooterData.youtubeUrl, color: "hover:text-red-500" },
+  ]
+
   return (
-    <footer className="bg-[#1B2537] text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div>
-          <h3 className="font-bold text-xl mb-4">MCC</h3>
-          <p className="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus magna purus, nisl dolor sed egestas ut imperdiet volutpat.</p>
-          <div className="flex space-x-4 mt-4">
-            <Link href="https://facebook.com" className="bg-yellow-600 p-2 rounded-full hover:bg-yellow-700">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/>
-              </svg>
-            </Link>
-            <Link href="https://twitter.com" className="bg-yellow-600 p-2 rounded-full hover:bg-yellow-700">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/>
-              </svg>
-            </Link>
+    <>
+      <ScrollToTop />
+      <footer className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
+        {/* Formes géométriques décoratives */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 right-10 w-16 h-16 bg-yellow-400/20 rounded-lg transform rotate-45 animate-pulse"></div>
+          <div
+            className="absolute bottom-40 left-20 w-24 h-24 bg-green-500/20 rounded-full animate-bounce"
+            style={{ animationDuration: "3s" }}
+          ></div>
+          <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-blue-500/10 rounded-lg transform rotate-12"></div>
+          <div
+            className="absolute bottom-20 right-40 w-12 h-12 bg-purple-400/30 rounded-full animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute top-40 left-1/3 w-8 h-8 bg-yellow-400/40 rounded-lg transform rotate-45 animate-bounce"
+            style={{ animationDelay: "2s", animationDuration: "4s" }}
+          ></div>
+        </div>
+
+        {/* Contenu principal */}
+        <div className="relative z-10 container mx-auto px-4 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {/* Logo et Description */}
+            <AnimatedCard delay={200} className="lg:col-span-1">
+              <div className="space-y-6">
+                <div className="group">
+                  <div className="relative inline-block">
+                    <div className="absolute -inset-2 bg-gradient-to-r from-yellow-400 to-green-400 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                    <Image
+                      src={defaultFooterData.logo}
+                      alt={defaultFooterData.siteName}
+                      width={120}
+                      height={120}
+                      className="relative h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-green-400 bg-clip-text text-transparent">
+                    {defaultFooterData.siteName}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed text-sm">{defaultFooterData.siteDescription}</p>
+                </div>
+              </div>
+            </AnimatedCard>
+
+            {/* Liens Rapides */}
+            <AnimatedCard delay={400} className="lg:col-span-1">
+              <div className="space-y-6">
+                <h3 className="text-lg font-bold text-white relative">
+                  Liens Rapides
+                  <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    { href: "/", label: "Accueil" },
+                    { href: "/about", label: "À propos" },
+                    { href: "/projects", label: "Projets" },
+                    { href: "/support", label: "Nous soutenir" },
+                    { href: "/partnership", label: "Partenariat" },
+                    { href: "/donate", label: "Faire un don" },
+                  ].map((link, index) => (
+                    <li key={index}>
+                      <Link
+                        href={link.href}
+                        className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"
+                      >
+                        <div className="w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-green-400 group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-3 rounded-full"></div>
+                        <span className="transform group-hover:translate-x-1 transition-transform duration-300">
+                          {link.label}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </AnimatedCard>
+
+            {/* Contact */}
+            <AnimatedCard delay={600} className="lg:col-span-1">
+              <div className="space-y-6">
+                <h3 className="text-lg font-bold text-white relative">
+                  Contact
+                  <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-green-400 to-blue-400 rounded-full"></div>
+                </h3>
+                <ul className="space-y-4">
+                  <li>
+                    <a
+                      href={`mailto:${defaultFooterData.contactEmail}`}
+                      className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"
+                    >
+                      <Mail className="w-5 h-5 mr-3 text-yellow-400 group-hover:scale-110 transition-transform duration-300" />
+                      <span className="transform group-hover:translate-x-1 transition-transform duration-300">
+                        {defaultFooterData.contactEmail}
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={`tel:${defaultFooterData.contactPhone}`}
+                      className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"
+                    >
+                      <Phone className="w-5 h-5 mr-3 text-green-400 group-hover:scale-110 transition-transform duration-300" />
+                      <span className="transform group-hover:translate-x-1 transition-transform duration-300">
+                        {defaultFooterData.contactPhone}
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <div className="group flex items-start text-gray-300">
+                      <MapPin className="w-5 h-5 mr-3 text-blue-400 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
+                      <span className="transform group-hover:translate-x-1 transition-transform duration-300">
+                        {defaultFooterData.address}
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </AnimatedCard>
+
+            {/* Réseaux Sociaux */}
+            <AnimatedCard delay={800} className="lg:col-span-1">
+              <div className="space-y-6">
+                <h3 className="text-lg font-bold text-white relative">
+                  Suivez-nous
+                  <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-purple-400 to-yellow-400 rounded-full"></div>
+                </h3>
+                <div className="flex space-x-4">
+                  {socialLinks.map((social) => {
+                    const Icon = socialIcons[social.name as keyof typeof socialIcons]
+                    return (
+                      <a
+                        key={social.name}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`
+                          group p-3 bg-white/10 backdrop-blur-sm rounded-full
+                          hover:bg-white/20 transition-all duration-300 transform hover:scale-110
+                          ${social.color}
+                        `}
+                      >
+                        <Icon className="w-5 h-5" />
+                      </a>
+                    )
+                  })}
+                </div>
+              </div>
+            </AnimatedCard>
+          </div>
+
+          {/* Section inférieure */}
+          <div className="mt-16 pt-8 border-t border-white/10">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="flex items-center space-x-2 text-gray-300 text-sm">
+                <Heart className="w-4 h-4 text-red-400 animate-pulse" />
+                <span>Fait avec amour pour les enfants</span>
+              </div>
+              <div className="text-gray-300 text-sm">
+                © 2024 {defaultFooterData.siteName}. Tous droits réservés.
+              </div>
+            </div>
           </div>
         </div>
-
-        <div>
-          <h3 className="font-bold mb-4">Liens utiles</h3>
-          <ul className="space-y-2">
-            <li><Link href="/about" className="text-gray-300 hover:text-white">Qui sommes-nous?</Link></li>
-            <li><Link href="/projects" className="text-gray-300 hover:text-white">Nos projets</Link></li>
-            <li><Link href="/support" className="text-gray-300 hover:text-white">Nous soutenir</Link></li>
-            <li><Link href="/blog" className="text-gray-300 hover:text-white">blogs</Link></li>
-            <li><Link href="/partnership" className="text-gray-300 hover:text-white">Partenariat</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="font-bold mb-4">Soutenir</h3>
-          <Link 
-            href="/donate"
-            className="bg-yellow-600 text-white px-6 py-2 rounded-full hover:bg-yellow-700 inline-block w-full sm:w-auto text-center"
-          >
-            SOUTENIR
-          </Link>
-        </div>
-
-        <div>
-          <h3 className="font-bold mb-4">Newsletter</h3>
-          <form className="flex flex-col sm:flex-row gap-2 w-full">
-            <input
-              type="email"
-              placeholder="Votre email"
-              className="bg-gray-700 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-600 flex-1 w-full"
-            />
-            <button className="bg-yellow-600 text-white px-4 py-2 rounded-full hover:bg-yellow-700 w-full sm:w-auto">
-              S'INSCRIRE
-            </button>
-          </form>
-        </div>
-      </div>
-      <div className="mt-8 text-center text-gray-400 text-xs px-4">
-        © {new Date().getFullYear()} MCC. Tous droits réservés.
-      </div>
-    </footer>
-  );
-} 
+      </footer>
+    </>
+  )
+}

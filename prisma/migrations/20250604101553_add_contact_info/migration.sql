@@ -1,0 +1,15 @@
+-- AlterTable
+ALTER TABLE `Settings` ADD COLUMN `contactAddress` VARCHAR(191) NULL,
+    ADD COLUMN `contactCity` VARCHAR(191) NULL,
+    ADD COLUMN `contactCountry` VARCHAR(191) NULL,
+    ADD COLUMN `contactEmail` VARCHAR(191) NULL,
+    ADD COLUMN `contactPhone` VARCHAR(191) NULL,
+    ADD COLUMN `facebookUrl` VARCHAR(191) NULL,
+    ADD COLUMN `instagramUrl` VARCHAR(191) NULL,
+    ADD COLUMN `linkedinUrl` VARCHAR(191) NULL,
+    ADD COLUMN `twitterUrl` VARCHAR(191) NULL,
+    ADD COLUMN `youtubeUrl` VARCHAR(191) NULL,
+    MODIFY `siteDescription` TEXT NOT NULL,
+    MODIFY `paymentMethods` TEXT NOT NULL,
+    MODIFY `metaDescription` TEXT NOT NULL,
+    MODIFY `metaKeywords` TEXT NOT NULL;

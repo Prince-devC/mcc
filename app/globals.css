@@ -2,39 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-.prose {
-  max-width: 65ch;
-  color: inherit;
-}
-
-.prose p {
-  margin-bottom: 1.5em;
-  line-height: 1.75;
-}
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --color-blue: #00adee;
+  --color-red: #ed1c24;
+  --color-green: #009640;
+  --color-yellow: #ffe600;
+  --color-purple: #762c91;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-} 
-
-@keyframes pulse-scale {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+  font-family: "Poppins", "Montserrat", sans-serif;
+  color: #212529;
 }
-.animate-pulse-scale {
-  animation: pulse-scale 1.2s infinite cubic-bezier(0.4,0,0.6,1);
+
+/* Animation pour les cercles du logo */
+@keyframes pulse-circle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-circle {
+  animation: pulse-circle 3s infinite ease-in-out;
+}
+
+/* Animation pour le défilement fluide */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Keyframes pour les animations flottantes */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
